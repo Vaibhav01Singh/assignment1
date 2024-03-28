@@ -1,17 +1,23 @@
 <template>
+    
   <div id="chatbox">
+   
+    <!-- <Header></Header> -->
     <input type="text" id="chat" v-model="message" @keyup.enter="sendMessage" placeholder="Enter your text here">
     <div id="text" v-if="generatedText">
     {{ generatedText }}
     </div>
   </div>
+
 </template>
 
 <script>
 
 import runChat from '../api';
+import Header from  './header.vue'
 
 export default {
+  components:{"Header":Header},
   data() {
     return {
       message: '',
@@ -50,13 +56,22 @@ export default {
 </script>
 
 <style scoped>
+.box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #text{
   border-radius:2%;
-  margin-top: 10px;
-  color:whitesmoke;
-  height: 70vh;
+  color:black;
+  height: 50svh;
+  position: relative;
   overflow-y: auto;
-  background: #283739;
+  background: rgb(245, 240, 240);
+  margin-left: 100px;
+  scrollbar-width: none;
+  text-align:left;
   
 }
 #chat {
@@ -66,20 +81,21 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 50%;
-  margin: auto;
+  width: 57%;
+  margin-left: 107px;
   padding: 10px;
   position: fixed;
-  bottom: 30px;
+  bottom: 50px;
+  border-radius: 10px;
   
 }
 #chatbox{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 50%;
+  width: 900PX;
   margin: auto;
-  padding: 10px;
+ 
 }
 
 </style>

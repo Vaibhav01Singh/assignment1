@@ -50,7 +50,7 @@
     background-color: beige;
     height: 200px;
     width: 300px;
-    border:2px solid blue;
+    border:2px solid black;
     margin-left: 500px;
     margin-top: 150px;
      border-radius: 5% ;
